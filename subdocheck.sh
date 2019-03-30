@@ -45,6 +45,7 @@ done
 ###############################################################################
 suu(){
       if [[ $su == "1" ]]; then
+      	printf "$found $x.$z\n" >> found.txt
 	      	 printf "$found $x.$z\n"
 	      	 rm -rf sub-q
 	  
