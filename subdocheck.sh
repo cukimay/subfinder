@@ -42,9 +42,12 @@ echo -n "list here : "; read url
 	printf "${RED}$empaz Not found\n"
 	exit
 fi
+LIMITATOR=15
 for x in $(gawk '{ print $1 }' $url);do 
-	cekksu $z $url
+    ((thread=thread%LIMITATOR)); ((thread++==0)) && wait
+	cekksu "$z" "$url"
 done
+wait
 }
 ###############################################################################
 suu(){
